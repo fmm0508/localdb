@@ -29,19 +29,19 @@ function App() {
     return result;
   }
 
-  function onFormSubmit(event) {
-    event.preventDefault();
-    const personInfo = Object.create(null);
-    personInfo.first_name = event.target[0].value;
-    personInfo.middle_name = event.target[1].value;
-    personInfo.last_name = event.target[2].value;
-    personInfo.dob = event.target[3].value;
-    personInfo.email = event.target[4].value;
-    personInfo.street = event.target[5].value;
-    personInfo.city = event.target[6].value;
-    personInfo.state = event.target[7].value;
-    personInfo.zip = event.target[8].value;
-    personInfo.phone = event.target[9].value;
+  // function onFormSubmit(event) {
+  //   event.preventDefault();
+  //   const personInfo = Object.create(null);
+  //   personInfo.first_name = event.target[0].value;
+  //   personInfo.middle_name = event.target[1].value;
+  //   personInfo.last_name = event.target[2].value;
+  //   personInfo.dob = event.target[3].value;
+  //   personInfo.email = event.target[4].value;
+  //   personInfo.street = event.target[5].value;
+  //   personInfo.city = event.target[6].value;
+  //   personInfo.state = event.target[7].value;
+  //   personInfo.zip = event.target[8].value;
+  //   personInfo.phone = event.target[9].value;
     
     // if(personInfo.first_name.length && 
     //   personInfo.middle_name.length && 
@@ -53,7 +53,8 @@ function App() {
     //   personInfo.state.length &&
     //   personInfo.zip.length &&
     //   personInfo.phone.length) 
-  }
+  //}
+
   if (data != null)
   return (
     <Container>
