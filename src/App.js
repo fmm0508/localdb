@@ -4,11 +4,12 @@ import './App.css';
 
 function App() {
 
-  const [firstName, setfirstName] = useState();
+  const [data, setData] = useState(null);
 
-  async function dispatchFetch() {
-    const response = await fetch({ method: 'POST', headers: {'Content-Type': 'application/json',},body: JSON.stringify(),});
-    return response;
+  const dispatchFetch = async () => {
+    const response = await fetch('https://dummyjson.com/products/1');
+    const result = await response.json();
+    return result;
   }
 
   function onFormSubmit(event) {
@@ -25,20 +26,23 @@ function App() {
     personInfo.zip = event.target[8].value;
     personInfo.phone = event.target[9].value;
     
-    if(personInfo.first_name.length && 
-      personInfo.middle_name.length && 
-      personInfo.last_name.length && 
-      personInfo.dob.length &&
-      personInfo.email.length &&
-      personInfo.street.length &&
-      personInfo.city.length &&
-      personInfo.state.length &&
-      personInfo.zip.length &&
-      personInfo.phone.length) 
-    {
-      console.log('everything is good.....');
-      console.log(dispatchFetch());
-    }
+    // if(personInfo.first_name.length && 
+    //   personInfo.middle_name.length && 
+    //   personInfo.last_name.length && 
+    //   personInfo.dob.length &&
+    //   personInfo.email.length &&
+    //   personInfo.street.length &&
+    //   personInfo.city.length &&
+    //   personInfo.state.length &&
+    //   personInfo.zip.length &&
+    //   personInfo.phone.length) 
+
+    console.log('everything is good.....');
+    dispatchFetch()
+    .then(function(response) {
+      console.log(response);
+      setData(response);
+    });
   }
 
   return (
@@ -57,6 +61,15 @@ function App() {
         <input type="tel" name="phoneNumber" placeholder='Phone'/>
         <button>submit</button>
       </form>
+      <center>
+        <h3>result:</h3>
+        <div>
+          <p>{ data ? data.id : '' } </p>
+          <p>{ data ? data.title : '' } </p>
+          <p>{ data ? data.description : '' } </p>
+          {/* <img alt='image' src={ data ? data.thumbnail : '' }/> */}
+        </div>
+      </center>
     </div>
   );
 }
