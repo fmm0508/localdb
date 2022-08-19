@@ -67,6 +67,8 @@ function App() {
           <p>{ data ? data.id : '' } </p>
           <p>{ data ? data.title : '' } </p>
           <p>{ data ? data.description : '' } </p>
+          <p>{ data ? data.category : '' } </p>
+          <h1>{ data ? data.stock : '' } </h1>
           {/* <img alt='image' src={ data ? data.thumbnail : '' }/> */}
         </div>
       </center>
