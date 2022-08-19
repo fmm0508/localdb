@@ -47,7 +47,16 @@ function App() {
 
   return (
     <div>
-      <h3>LocalDB</h3>
+      <h3>LocalDB </h3>
+      <p>,
+          
+      </p>
+      <ul>
+        <li>Production: https://aesthetic-khapse-f59b87.netlify.app/</li>
+        <li>Staging: https://friendly-druid-85833f.netlify.app/</li>
+        <li>Development: https://lucent-nasturtium-f19a77.netlify.app/</li>
+      </ul>
+      
       <form onSubmit={ onFormSubmit }>
         <input type="text" name="firstName" size="60" placeholder='First name'/>
         <input type="text" name="middleName" size="60" placeholder='Middle name(optional)'/>
